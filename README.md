@@ -5,5 +5,5 @@ Package Delivery System
 node ./index.js 
 
 ## for run front end (angular application) : 
-ng serve --watch --live-relod --poll 200 --open 
+ng serve --watch --live-reload --poll 200 --open 
 
