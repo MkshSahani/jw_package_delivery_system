@@ -1,0 +1,147 @@
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg bg-dark">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/package-register">Register Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/track-package-list">Track Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user-package-history">History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+        </li>
+      </ul>
+</nav>
+
+<!--  -->
+
+<div class="container update-form-">
+
+    <p class="h2">
+        User Profile 
+    </p> 
+    <hr /> 
+
+    <p *ngIf="notValidDataFlag" class="text-danger">
+        {{ message }}
+    </p>
+
+    <p *ngIf="userProfileUpdateFlag" class="text-success">
+        {{ message }}
+    </p>
+
+    <form #userProfileForm="ngForm" (ngSubmit)="userProfileFormSubmit(userProfileForm.value)">
+
+        <div class="row mb-4">
+            <div class="col-3">
+                <label for="firstName">
+                    First Name:
+                </label>  
+            </div>
+
+            <div class="col-3">
+                <input type="text"  class="form-control" for="firstName" name="firstName" ngModel />  
+            </div>
+
+            <div class="col-3">
+                <label for="secondName">
+                    Second Name:
+                </label> 
+            </div>
+
+            <div class="col-3">
+                <input type="text" class="form-control" for="secondName" name="secondName" ngModel />
+
+            </div>
+
+        </div>
+
+        <div class="row mb-4">
+
+            <div class="col-3">
+                <label for="emailAddress">
+                    Email Address:
+                </label>
+            </div>
+
+            <div class="col-3">
+                <input type="email" class="form-control" for="emailAddress" name="emailAddress" ngModel /> 
+            </div>
+
+            <div class="col-3">
+                <label for="phoneNumber">
+                    Phone Number : 
+                </label>
+            </div>
+
+            <div class="col-3">
+                <input type="tel" class="form-control" for="phoneNumber" name="phoneNumber" ngModel /> 
+            </div>
+
+        </div>
+
+        <div class="row mb-4">
+
+            <div class="col-3">
+                <label for="county">
+                    Country : 
+                </label>
+            </div>
+
+            <div class="col-3">
+                <input type="text" for="country" class="form-control" name="country" ngModel /> 
+            </div>
+
+            <div class="col-3">
+                <label for="status">
+                    State : 
+                </label>
+            </div>
+
+            <div class="col-3">
+                <input type="text" for="state" class="form-control" name="state" ngModel /> 
+            </div>
+
+        </div>
+
+        <div class="row mb-4">
+
+            <div class="col-3">
+                <label for="city">
+                    City : 
+                </label>
+            </div>
+
+            <div class="col-3">
+                <input type="text" for="city" name="city" class="form-control" ngModel /> 
+            </div>
+
+            <div class="col-3">
+                <label for="zipCode">
+                    Zip Code : 
+                </label>
+            </div>
+
+            <div class="col-3">
+                <input type="text" for="zipCode" name="zipCode" class="form-control" ngModel /> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <button class="btn btn-dark" type="submit" >
+                    Update Profile 
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

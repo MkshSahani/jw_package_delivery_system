@@ -1,0 +1,59 @@
+<div class="container-fluid signup-navbar-container bg-dark text-white">
+    <span class="signup-option"> 
+        <strong>
+            Sign Up    
+        </strong>    
+    </span>
+
+    <span class="login-option" routerLink="/login" >
+        <strong>
+            Log in 
+        </strong>
+    </span>
+</div>
+
+<div class="container signgup-form-container"> 
+    <p class="signup-form-caption">
+        Sign up Form
+    </p>
+    <p *ngIf="userCreated" class="text-success"> 
+        your user has been created, please go to login page.
+        <span routerLink="/login"><u style="cursor : pointer;" >login</u></span> 
+    </p> 
+    <p *ngIf="userCreateOperationFailedFlag" class="text-danger">
+        Fail to create your account, please check data.
+    </p> 
+    <form #userSignupData="ngForm" (ngSubmit)="signUpFormSubmit(userSignupData.value)" >
+        <div class="form-group">
+            <label for="userFullName">
+                Full Name : 
+            </label>
+            <input type="text" for="userFullName" class="form-control user-sign-input mb-4" name="userFullName" ngModel required /> 
+        </div>
+
+        <div class="form-group">
+            <label for="userEmailAddress">
+                Email Address : 
+            </label>
+            <input type="email" for="userEmailAddress" class="form-control user-sign-input mb-4" name="userEmailAddress" ngModel required /> 
+        </div>
+
+        <div class="form-group">
+            <label for="userPhoneNumber">
+                Phone : 
+            </label>
+            <input type="tel" for="userPhoneNumber" class="form-control user-sign-input mb-4" name="userPhoneNumber" ngModel required /> 
+        </div>
+
+        <div class="form-group">
+            <label for="userPassword">
+                Password : 
+            </label>
+            <input type="password" for="userPassword" class="form-control user-sign-input mb-4" name="userPassword" ngModel required />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn  btn-dark input-signup-btn mb-4">Submit</button>
+        </div>
+    </form>
+</div>

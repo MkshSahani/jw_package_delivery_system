@@ -1,0 +1,9 @@
+const TWILIO_ACCOUNT_SID = "AC9b5a6ef861fcb2c1804cf6107888ee17"; 
+const TWILIO_AUTH_TOKEN = "b25ec807dab08f272132cf6f70e1f707";
+
+module.exports = {
+    TWILIO_ACCOUNT_SID, 
+    TWILIO_AUTH_TOKEN
+}
+
+// +18647783723

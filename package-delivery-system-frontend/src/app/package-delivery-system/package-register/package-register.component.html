@@ -1,0 +1,183 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/package-register">Register Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/track-package-list">Track Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user-package-history">History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+        </li>
+      </ul>
+</nav>
+
+
+<div class="container">
+    <p class="package-register-form-caption h2">
+        Package Register Form 
+    </p>    
+    <hr />
+</div>
+
+<div class="container packager-register-form-container"> 
+    
+    <p *ngIf="packageRegistrationSuccessFull" class="text-success">
+        Package Has Been Registered, You Can Add More packagges. 
+    </p>
+
+    <p *ngIf="packageDataError" class="text-danger">
+        {{ packageDataErrorMessage }}
+    </p>
+    
+    <form #packageRegisterForm="ngForm" (ngSubmit)="registerPackage(packageRegisterForm.value)" >
+        <p>
+            <b>Package Detials</b>
+        </p>
+        <div class="form-group row mb-4"> 
+            <div class="col-3">
+                <label for="packageName">Package Name : </label>
+            </div>   
+
+            <div class="col-3"> 
+                <input type="text" for="packageName" class="form-control package-reg-input"  name="packageName" ngModel   />
+            </div>
+
+            <div class="col-3">
+                <label for="packageType">Package Type   : </label>
+            </div>
+
+            <div class="col-3">
+                <select class="form-select package-reg-input" required aria-label="select example" name="packageType" ngModel >
+                    <option value="Book">Book</option>
+                    <option value="Electronic Accesories">Electronic Accesories</option>
+                    <option value="Foor">Food</option>
+               </select>
+            </div>
+<!-- 
+
+            <div class="col-3">
+                <input type="text" for="packageType" class="form-control package-reg-input" name="packageType" ngModel />
+            </div>   -->
+        </div>
+
+        <div class="form-group row mb-4">
+            <div class="col-3">
+                <label for="packageLength">Package Length : </label> 
+            </div>
+
+            <div class="col-3">
+                <input type="text" for="packageLength" class="form-control package-reg-input" name="packageLength"  ngModel /> 
+            </div>
+
+            <div class="col-3"> 
+                <label for="packageWeight">Package Breadth: </label> 
+            </div>
+
+            <div class="col-3"> 
+                <input type="text" for="packageBreadth" class="form-control package-reg-input"  name="packageBreadth" ngModel /> 
+            </div>
+
+        </div> 
+
+        <div class="form-group row mb-4">
+            <div class="col-3">
+                <label for="packageWeight">Package Weight : </label> 
+            </div>
+            <div class="col-3">
+                <input type="text" for="packageWeight" class="form-control package-reg-input" name="packageWeight" ngModel /> 
+            </div>
+        </div>
+
+        <hr /> 
+        <p>
+            <b>Shippment Details</b>
+        </p> 
+            <div class="form-group row mb-4">
+                <div class="col-3">
+                    <label for="packagePickupAddress">Pick up Address : </label>
+                </div>
+
+                <div class="col-3">
+                    <input type="text" for="packagePickupAddress" class="form-control package-reg-input" name="packagePickupAddress" ngModel /> 
+                </div>
+
+                <div class="col-3">
+                    <label for="packageDropDownAddress">Drop Address : </label>
+                </div>
+                
+                <div class="col-3">
+                    <input  type="text" for="packageDropDownAddress" class="form-control package-reg-input" name="packageDropDownAddress" ngModel />
+                </div>
+            </div>
+
+            <div class="form-group row mb-4">
+                <div class="col-3">
+                    <label for="packagePhoneNumber">Phone Number : </label>
+                </div>
+
+                <div class="col-3">
+                    <input type="text" for="packagePhoneNumber" class="form-control package-reg-input"  name="packagePhoneNumber" ngModel /> 
+                </div>
+
+            </div>
+
+            <div  *ngIf="couponCodeEnableFlag" class="form-group row mb-4">
+                <hr />
+                <b>Select Coupon</b>
+            </div>
+
+
+            <p class="text-success" *ngIf="packageCostVisibleFlag"> 
+                {{ packageCostMessage }}
+            </p>
+            
+            <hr />
+
+
+
+            <div class="form-group row mb-4">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-dark package-btn">Register Package</button>
+                </div>
+
+
+            </div>
+    </form>
+</div> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-dark package-btn" (click)="getEstimatedCost($event,packageRegisterForm.value)" >Calculate Cost</button>
+        </div>
+        
+        <div class="col-4">
+            <button class="btn btn-dark package-btn" (click)="couponCodeBtn($event)">
+                <span *ngIf="couponCodeEnableFlag;else enableCouponCode">
+                    Disable Coupon Code 
+                </span>
+
+                <ng-template #enableCouponCode>
+                    Enable Coupon Code 
+                </ng-template>
+                
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+    discount coupoun, 
+ -->
+
+
+

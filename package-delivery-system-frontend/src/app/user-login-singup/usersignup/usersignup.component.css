@@ -1,0 +1,43 @@
+.signup-navbar-container {
+    font-size: large;
+    padding: 15px;
+    color: white;
+}
+
+.signup-option {
+    font-size: 25px;
+}
+
+.login-option {
+    font-size: 25px;
+    float: right;
+    border: 1px solid white;
+    padding: 3px;   
+}
+
+.login-option:hover {
+    background-color: white;
+    color: black; 
+    cursor: pointer;
+}
+
+.signgup-form-container {
+    width: 40%;
+    margin-top: 100px;
+    padding: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+.signup-form-caption {
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+.input-signup-btn {
+    width: 100%;
+    color: white;
+}

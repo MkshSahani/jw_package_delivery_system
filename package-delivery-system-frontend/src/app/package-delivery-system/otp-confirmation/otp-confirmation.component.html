@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <ul class="nav justify-content-end">
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/package-register">Register Parcel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/track-package-list">Track Parcel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/user-package-history">History</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/logout">Logout</a>
+      </li>
+    </ul>
+</nav>
+
+
+<div class="container otp-confirm-container">
+    <p class="otp-container-text">
+      Hii, {{ fullName }} Please Confirm Your Phone Number.<br/> 
+    </p>
+    <hr /> 
+    <p class="otp-container-text">
+      Enter OTP Sent to Your Regsitered Phone number : {{ phoneNumber }}
+    </p>
+    <br /> 
+    <p  *ngIf="otpSent" class="text-success">
+      OTP Sent For Phone Number : {{ phoneNumber }}
+    </p>
+    <p *ngIf="wrongOtp" class="text-danger">
+      * You have entered Wrong OTP, please Try Again. 
+    </p>
+    <form #otpConfirmationData="ngForm" (ngSubmit)="validateOTP(otpConfirmationData.value)" >
+        <div class="form-group">
+            <label for="userOTP">OTP : </label>
+            <input type="text" class="form-control mb-4" name="userOTP" required ngModel />
+        </div>
+        <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <span><button type="submit" class="btn btn-primary otp-submit-btn mb-4">Submit</button></span>
+              </div>
+              <div class="col">
+                <span><button class="btn bg-success text-white otp-resend-btn" (click)="sendOTP()" >Resend OTP</button></span>
+              </div>
+            </div>
+        </div>
+    </form>
+
+</div>

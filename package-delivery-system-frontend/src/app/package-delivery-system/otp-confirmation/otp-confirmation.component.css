@@ -1,0 +1,18 @@
+.otp-confirm-container {
+    width: 40%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.otp-submit-btn {
+    width: 100%;
+}
+
+.otp-resend-btn {
+    width: 100%;
+}
+
+.otp-container-text {
+    color: rgb(95, 95, 95);
+}

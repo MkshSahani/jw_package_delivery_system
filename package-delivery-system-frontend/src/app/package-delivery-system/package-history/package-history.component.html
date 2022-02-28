@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/package-register">Register Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/track-package-list">Track Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user-package-history">History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+        </li>
+      </ul>
+</nav>
+
+<div class="container-fluid">
+    <p class="h1">
+        Packages Register
+    </p>
+    <hr /> 
+</div>
+
+<div cass="container-fluid package-data-table-container">
+    <table class="table package-info-table">
+        <thead class="table bg-dark text-white"> 
+            <th scope="col"> 
+                Package ID 
+            </th>
+            <th scope="col">
+                Package Name 
+            </th>
+            <th scope="col">
+                Package Type 
+            </th>
+            <th scope="col">
+                Length 
+            </th>
+            <th scope="col">
+                Weight
+            </th>
+            <th scope="col">
+                Pickup Address 
+            </th>
+            <th scope="col">
+                Drop Down Address 
+            </th>
+            <th scope="col">
+                Register On 
+            </th>
+            <th scope="col">
+                View 
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let package of list_of_package">
+                <td> 
+                    {{ package.package_id }}
+                </td>
+                <td> 
+                    {{ package.package_name }}
+                </td>
+                <td> 
+                    {{ package.package_type }}    
+                </td>
+                <td>
+                    {{ package.length  }}
+                </td> 
+                <td> 
+                    {{ package.weight }}
+                </td>
+                <td> 
+                    {{ package.pickup_address }}
+                </td>
+                <td> 
+                    {{ package.drop_address }}
+                </td>
+                <td> 
+                    {{ package.registerd_on | date }}
+                </td>
+                <td> 
+                    <a routerLink="/track-package/{{ package.package_id }}" >view</a> 
+                </td>
+
+            </tr>            
+        </tbody>
+    </table>
+</div>

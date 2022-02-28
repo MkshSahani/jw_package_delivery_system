@@ -1,0 +1,31 @@
+<div class="container">
+
+    <p class="h1">
+        Review Form 
+    </p>
+    <p *ngIf="reviewAddedFlag" class="text-success">
+        {{ reviewMessage }}
+    </p>
+    <hr />
+
+    <form [formGroup]="reviewForm" (ngSubmit)="reviewFormSubmit(reviewForm.value)" >
+        <div class="row mb-4">
+            <label for="packageID">
+                Package ID : 
+            </label>
+            <input type="text" placeholder="{{ packageID }}" class="form-control" name="packageID" disabled/> 
+        </div>
+
+        <div class="row mb-4">
+            <label for="Review">
+                Review : 
+            </label>
+            <textarea type="text" formControlName="reviewContent" ></textarea>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+
+    </form>
+</div>

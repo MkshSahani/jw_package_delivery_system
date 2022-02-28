@@ -1,0 +1,33 @@
+
+.table-col {
+    border-right: 2px solid gray;
+}
+
+.package-info-table {
+    margin-top: 110px;
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.table-info-caption {
+    text-align: center;
+}
+
+
+.tracking-table-container {
+    margin-left: 10px;
+}
+
+.tracking-info-table {
+    margin-top: 110px;
+    border: 1px solid gray;
+}
+
+.data-tracking-info-container {
+    margin-top: 100px;
+}
+
+.update-package-link {
+    cursor: pointer;
+}
+  

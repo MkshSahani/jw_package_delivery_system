@@ -1,0 +1,83 @@
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg bg-dark">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/package-register">Register Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/track-package-list">Track Parcel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user-package-history">History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+        </li>
+      </ul>
+</nav>
+
+<div class="container mb-4">
+    <p class="h1">
+        Update Tracking Data 
+    </p>
+    <hr /> 
+</div>
+
+<div class="container update-tracking-form-container">
+    <p *ngIf="validationFailed" class="text-danger">
+        {{ validationStatusMessage }}
+    </p>
+
+    <p *ngIf="validationStatusMessage" class="text-success">
+        {{ validationStatusMessage }}
+    </p>
+
+    <form #trackingUpdateForm="ngForm" (ngSubmit)="updateTracking(trackingUpdateForm.value)" >
+        <div class="row mb-4">
+            <div class="col-3">
+                <label for="packageID">
+                    package ID : 
+                </label>
+            </div>
+            <div class="col-3">
+                <input type="text" for="packageID"  name="packageID"   class="form-control"  [placeholder]="packageID" disabled ngModel />
+            </div>
+
+            <div class="col-3">
+                <label for="packageStatus">
+                    Package Status : 
+                </label>
+            </div>
+            <div class="col-3">
+                <select class="form-select" name="packageStatus" ngModel>
+                    <option value="Arrived At Terminal 1">Arrived At Terminal 1</option>
+                    <option value="Delivered">Delivered</option>
+                </select> 
+            </div>
+        </div>
+
+
+        <div class="row mb-4">
+            <div class="col-3">
+                <label for="lastLocation">
+                    Last Location : 
+                </label>
+            </div>
+
+            <div class="col-9">
+                <input type="text" for="locatLocation" name="lastLocation" class="form-control address-input-text" ngModel  />
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">Update Tracking</button>
+            </div>
+        </div>
+
+    </form>
+</div>

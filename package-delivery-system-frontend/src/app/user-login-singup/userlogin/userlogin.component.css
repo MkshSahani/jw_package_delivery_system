@@ -1,0 +1,45 @@
+.login-nav-bar {
+    font-size: large;
+    padding: 15px;
+    color: white;
+}
+
+.login-navbar-option {
+    font-size: 25px;
+}
+
+.login-navbar-option-logout {
+    float: right;
+    font-size: 25px;
+    border: 1px solid white;
+    padding: 2px;
+    margin: 5px;
+    /* border-radius: 10px; */
+}
+
+.login-navbar-option-logout:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.login-form-container {
+    width: 30%;
+    margin-top: 5%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    padding: 30px;
+}
+
+.login-form-caption {
+    font-size: 25px;
+    text-align: center;
+}
+
+
+.login-button {
+    width: 100%;
+}
+
+
